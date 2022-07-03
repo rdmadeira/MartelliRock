@@ -32,7 +32,11 @@
     </header>
     <main>
         <section class="hero-section">
-            <img src="./images/martelli-rock-hero.png" alt="image of banner section" width="100%" height="100%">
+          <div class="hero-section__div-title">
+            <h1>TECNOLÓPIS - 2, 3, 4 DE JULIO</h1>
+            <h2>Villa Martelli - Provincia de Buenos Aires.</h2>
+          </div>  
+          <img src="./images/martelli-rock-hero.png" alt="image of banner section" width="100%" height="100%">
         </section>
         <section class="carousel-section" id="carousel-section">
             <div class="logo-ctn" id="logo-carousel-div">
@@ -92,21 +96,24 @@
             </div>
         </section>
         <section class="buy-form-section display-none">
-            <form action="#main.php" method="get" id="buy-form">
+            <form action="#main.php" method="get" id="buy-form" name="buy-form">
                 <h3>Comprá Entradas Aquí:</h3>
                 <div class="logo-ctn" id="logo-form-div">
                     <img src="./images/logo200px.png" alt="Martelli Rock logo image" width="100%" height="100%">
                 </div>
                 <label for="name">Nombre: </label>
-                <input type="text" name="name" id="name" placeholder="Input your first name" required pattern="[A-Za-z]"/>
+                <input type="text" name="name" id="name" placeholder="Input your first name" required pattern="[A-Za-z]{1,}"/>
                 <label for="lastname">Apellido: </label>
-                <input type="text" name="lastname" id="lastname" placeholder="Input your last name" required pattern="[A-Za-z]"/>
+                <input type="text" name="lastname" id="lastname" placeholder="Input your last name" required pattern="[A-Za-z]{1,}"/>
                 <label for="email">Email: </label>
                 <input type="email" name="email" id="email" placeholder="Input your Email" required/>
                 <label for="amount">Cantidad de entradas: </label>
                 <input type="number" name="amount" id="amount" min="1" max="10" value="1" required />
                 <button type="submit" id="btn-submit">Enviar</button>
             </form>
+            <div id="up-arrow">
+
+            </div>
             <!-- <div class="back">
                 <img src="./images/arrow-up.png" alt="" width="100%" height="100%">
             </div> -->

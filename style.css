@@ -2,6 +2,7 @@
     --dark-blue: #182043;
     --white-green: #ddf3b6;
     --mid-blue: #133965;
+    --green: #ccff72;
     --nav-font: sans-serif;
 }
 * {
@@ -18,6 +19,7 @@ a {
 body {
     width: 100%;
     background-color: black;
+    position: relative;
 }
 header {
     width: 100%;
@@ -26,13 +28,20 @@ header {
     justify-content: space-between;
     background-color: var(--dark-blue);
     padding: 5px 2vw;
+    position: sticky;
+    z-index: 1;
+    top: 0%;
+    left: 0%;
+}
+.nav-ctn {
+  align-self: end;
 }
 .nav-ctn nav ul{
     display: flex;
     column-gap: 10px;
 }
 .nav-ctn nav ul li {
-    padding: 1vw 2vw;
+    padding: 1vw 2vw 0.2vw;
     color: var(--white-green);
     font-family: sans-serif;
 }
@@ -44,6 +53,26 @@ header {
     height: 92vh;
     background-color: var(--mid-blue);
 }
+.hero-section__div-title {
+    position: absolute;
+    bottom: 0%;
+    right: 0;
+    padding: 4vw 2vw;
+    color: var(--green);
+    font-family: sans-serif;
+    width: 35%;
+    background-color: #13396563;
+    border-radius: 30px;
+    min-width: 305px;
+}
+.hero-section__div-title h1 {
+  font-size: min(max(2.5vw,30px),32px);
+  margin-bottom: 2vw;
+}
+.hero-section__div-title h2 {
+  font-size: min(max(2.5vw,15px),25px);
+}
+
 .rotate-in-hor {
 	-webkit-animation: rotate-in-hor 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: rotate-in-hor 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -85,7 +114,7 @@ header {
 
 .carousel-section {
     width: 100%;
-    height: 100vh;
+    height: 92vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -179,6 +208,7 @@ input[type="radio"] {
     border-radius: 8px;
     min-width: 320px;
     padding: 16px 10px;
+    display: none;
   }
   
   .upper-part {
@@ -267,7 +297,7 @@ input[type="radio"] {
 
   .buy-form-section {
     width: 100%;
-    height: 100vh;
+    height: 92vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -291,19 +321,24 @@ input[type="radio"] {
     min-width: 390px;
     display: flex;
     flex-direction: column;
-    padding: 5% 10%;
+    padding: 3% 10%;
     font-family: sans-serif;
     position: relative;
     background:  url(./images/logo200px.png) no-repeat #a9afc8;
     background-size: cover;
     background-blend-mode: screen;
   }
-  #buy-form::after {
-    content: url(./images/arrow-up.png);
-    transform: scale(0.2);
+  #up-arrow {
+    background: url(./images/UpArrow.png) no-repeat;
+    background-size: cover;
     position: absolute;
-    top: 0;
-    right: 0;
+    width: 5%;
+    height: 5vw;
+    top: 0%;
+    right: 2%;
+  }
+  #up-arrow:hover {
+    cursor: pointer;
   }
   #logo-form-div {
     width: 20%;
@@ -345,3 +380,30 @@ input[type="radio"] {
     color: var(--white-green);
     font-weight: bold;
   }
+  button:hover {
+     cursor: pointer;
+  }
+@media all and (max-width: 495px) {
+  .hero-section__div-title {
+    width: auto;
+  }
+  .hero-section__div-title h1 {
+    font-size: min(max(5.5vw,24px),27px);
+  }
+  .hero-section__div-title h2 {
+    font-size: min(max(5.5vw,18px),21px);
+  }
+  #logo-carousel-div {
+    top: 5vw;
+  }
+  .carousel-section img {
+    height: 55%;
+  }
+  /* .cards {
+    height: 75%;
+  } */
+  
+  #item-1:checked ~ .cards #song-1, #item-2:checked ~ .cards #song-2, #item-3:checked ~ .cards #song-3 {
+    transform: translatex(0) translatey(225px) scale(1.3);
+  }
+}
