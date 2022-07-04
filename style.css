@@ -18,7 +18,7 @@ a {
 }
 body {
     width: 100%;
-    background-color: black;
+    background-color: var(--mid-blue);
     position: relative;
 }
 header {
@@ -118,17 +118,25 @@ header {
   padding: 5vw 3vw;
   transition: all 0.9s ease-out;
   background-color: var(--mid-blue);
-  ;
 }
 .info-section__text-ctn {
   width: 65%;
   background-color: var(--white-green);
   color: var(--mid-blue);
   font-family: var(--nav-font);
-  padding: 1vw 2vw
+  padding: 1vw 2vw;
+  position: relative;
 }
 .info-section h2, .info-section p {
   margin-bottom: 30px;
+}
+.info-section h2 {
+  font-size: min(max(2.5vw,21px),30px);
+  padding-right: 40px;
+}
+
+.info-section p {
+
 }
 .maps-ctn {
   width: 35%;
@@ -356,16 +364,17 @@ input[type="radio"] {
     background-size: cover;
     background-blend-mode: screen;
   }
-  #up-arrow {
-    background: url(./images/UpArrow.png) no-repeat;
-    background-size: cover;
+  .up-arrow {
+   /*  background: url(./images/UpArrow.png) no-repeat;
+    background-size: cover; */
     position: absolute;
-    width: 5%;
-    height: 5vw;
-    top: 0%;
-    right: 2%;
+    z-index: 1;
+    width: 5vw;
+    top: 2%;
+    right: 0%;
+    min-width: 33px;
   }
-  #up-arrow:hover {
+  .up-arrow:hover {
     cursor: pointer;
   }
   #logo-form-div {
@@ -421,6 +430,18 @@ input[type="radio"] {
   .hero-section__div-title h2 {
     font-size: min(max(5.5vw,18px),21px);
   }
+  .info-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 10vw 0vw;
+  }
+  .maps-ctn {
+    width: 100%;
+  }
+  .info-section__text-ctn {
+    width: 100%;
+    padding: 6vw 5vw;
+  }
   #logo-carousel-div {
     top: 5vw;
   }
@@ -432,6 +453,6 @@ input[type="radio"] {
   } */
   
   #item-1:checked ~ .cards #song-1, #item-2:checked ~ .cards #song-2, #item-3:checked ~ .cards #song-3 {
-    transform: translatex(0) translatey(225px) scale(1.3);
+    transform: translatex(0) translatey(335px) scale(1.3);
   }
 }

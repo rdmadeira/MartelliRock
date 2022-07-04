@@ -14,19 +14,25 @@ window.onload = () => {
     document.getElementById('bands-li').addEventListener('click',scrollBands);
     document.getElementById('buy-li').addEventListener('click', appearScrollForm);
     document.forms[0].addEventListener('submit', ()=> getData(event));
-    document.getElementById('up-arrow').addEventListener('click',scrollBack);
+    document.querySelectorAll('.up-arrow').forEach((item,index)=>item.addEventListener('click',()=>scrollBack(index)));
     document.getElementById('info-li').addEventListener('click', appearscrollInfo);
     
     function appearscrollInfo() {
         const infoSection = document.querySelector('.info-section');
-        infoSection.classList.toggle('display-none');
-        infoSection.classList.toggle('hidden');
+        infoSection.classList.remove('display-none');
+        setTimeout(()=>infoSection.classList.remove('hidden'),1000);
         infoSection.scrollIntoView({behavior:'smooth', block: 'start'});
     }
-    function scrollBack() {
+    function scrollBack(index) {
         document.body.scrollIntoView({behavior: 'smooth', block: 'start'});
-        const buyFormSection = document.querySelector('.buy-form-section');
-        setTimeout(()=> buyFormSection.classList.toggle('display-none'),1000);
+        if(index===0) {
+            const infoSection = document.querySelector('.info-section');
+            infoSection.classList.toggle('hidden')
+            setTimeout(()=> infoSection.classList.toggle('display-none'),1000)
+        } else if(index===1) {
+            const buyFormSection = document.querySelector('.buy-form-section');
+            setTimeout(()=> buyFormSection.classList.toggle('display-none'),1000);
+        }
     }
     function scrollBands() {
         const carouselSect = document.getElementById('carousel-section');
@@ -35,7 +41,7 @@ window.onload = () => {
 
     function appearScrollForm() {
         const buyFormSection = document.querySelector('.buy-form-section');
-        buyFormSection.classList.toggle('display-none'); 
+        buyFormSection.classList.remove('display-none'); 
         buyFormSection.scrollIntoView({behavior:'smooth', block: 'start'});
     }
 
