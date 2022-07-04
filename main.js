@@ -15,7 +15,14 @@ window.onload = () => {
     document.getElementById('buy-li').addEventListener('click', appearScrollForm);
     document.forms[0].addEventListener('submit', ()=> getData(event));
     document.getElementById('up-arrow').addEventListener('click',scrollBack);
-        
+    document.getElementById('info-li').addEventListener('click', appearscrollInfo);
+    
+    function appearscrollInfo() {
+        const infoSection = document.querySelector('.info-section');
+        infoSection.classList.toggle('display-none');
+        infoSection.classList.toggle('hidden');
+        infoSection.scrollIntoView({behavior:'smooth', block: 'start'});
+    }
     function scrollBack() {
         document.body.scrollIntoView({behavior: 'smooth', block: 'start'});
         const buyFormSection = document.querySelector('.buy-form-section');

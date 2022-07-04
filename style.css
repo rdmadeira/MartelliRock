@@ -112,6 +112,34 @@ header {
 
   /* *************** KeyFrame - End ************************************************************************** */
 
+.info-section {
+  display: flex;
+  width: 100%;
+  padding: 5vw 3vw;
+  transition: all 0.9s ease-out;
+  background-color: var(--mid-blue);
+  ;
+}
+.info-section__text-ctn {
+  width: 65%;
+  background-color: var(--white-green);
+  color: var(--mid-blue);
+  font-family: var(--nav-font);
+  padding: 1vw 2vw
+}
+.info-section h2, .info-section p {
+  margin-bottom: 30px;
+}
+.maps-ctn {
+  width: 35%;
+  padding: 1vw 2vw;
+  background-color: var(--white-green);
+}
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
 .carousel-section {
     width: 100%;
     height: 92vh;
