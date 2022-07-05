@@ -48,10 +48,10 @@ window.onload = () => {
     function getData(event) {
         event.preventDefault();
         let inputs = document.querySelectorAll('#buy-form input');
-        console.log(inputs);
+        
         let objectData = {};
-        inputs.forEach((item,index) => objectData[item.id] = item.value);
-        console.log(objectData);
+        inputs.forEach((item) => objectData[item.id] = item.value);
+        
         let name = document.getElementById('name').value;
         let lastName = document.getElementById('lastname').value;
         let email = document.getElementById('email').value;
